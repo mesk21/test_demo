@@ -1,0 +1,418 @@
+sy process- ps
+create a folder devops change the directory to devops
+and create a new file with cat and show the contents of that
+file.
+| : pipline operator
+sudo useradd ye
+sudo passwd
+
+sudo chown ye file_name
+
+lsof : list of open files
+ifconfig -a
+
+Q. write the command to copy list of files and folders 
+into a filename k1.txt. 
+ans. ls > filename(in which you want to save) or
+     ls -l | cat > filename
+
+Q. write the command to append the contents of one file
+to another file.
+ans. cat file1 >> file2
+
+htop
+free : check how much space is available
+
+--------------------------------------------
+Q. create a directory d1  in d1 create a d2 under d2 create a 
+   file or create a empty file then remove d2.
+d1
+
+id commands: list of all user and group names.
+diff test.txt test1.txt: to find the difference between two
+	      files
+history :
+ssh-keygen : generates a public/private authentication
+	     key pair to connect to remote systems
+ssh-keygen -t -rsa
+ip
+nslookup : name server lookup
+nslookup url
+alias ns=nslookup
+tail : 
+
+Q. Match all the line which starts with happy
+ans. grep "happy" filename
+Q. write command to match the line which contains
+   a to c
+ans. grep "[a-c]" text1.txt
+Q. write a command that matches all the line
+that don't contain a to c.
+ans. grep "[^a-c]" filename
+
+grep "[a-zA-Z0-9._]\+@[azA-Z]\+\.[a-ZA-Z]\+.[a-zA-Z]\+" filename.txt
+
+Q. list all the running process with the pid.
+ans. ps
+
+Q. write the command to show the ip address of eth0.
+ans. ip address show eth0
+
+w command : current login details 
+env : envirnoment variable
+whoami : 
+netstat : statistics of network
+curl -o filename : transfer data to or from data server using 
+		   any available protocols. 
+curl -I -s https://opensource.com
+curl -l -s https://opensource.com
+curl -I -s https://opensource.com -o h7.txt
+curl https://www.python.org -o save_in_this_file.txt
+df command : disk free
+Q. write the command to print last two files of long listing.
+ans.  ls -l | cat > lasttwo.txt | tail 2 lasttwo.txt
+      
+cat  filename | tr a-z A-Z
+
+--------------------------------------------------------------
+Commands:
+echo : displays a line of string/text that is passed as the arguments
+/bin/echo --help
+
+read variable_name : to take input from user
+echo $a : to print the value
+Q. write a command to show the contents in form of vertical details.
+ans. echo -e "hello\vworld"
+
+---------------------------------------------------------------
+Shell Scripting
+-------
+- bourne again shell
+- shell > kernel > hardware
+- terminal between user and kernel
+- nano k2.sh
+	- . k2.sh
+Q. write a shell script which reads your name from user and prints it.
+ans. 
+
+>> a=10
+>> b=20
+>> echo $(( $a + $b))
+>> echo `expr $a + $b `
+
+Q. write a shell command to read two values from the users and perform 
+   subtraction and print the result.
+ans. >>nano k3.sh (write shell command in this file)
+     >>. k3.sh
+Q. write a shell command to read two values and output
+   a + b^3.
+ans. echo  $(($a + $b**3))
+
+Q. write a shell program to intializa a=7 b=15. and perform
+   multiplication of a and b subtract 4 from a and find the remainder
+ans. 
+
+systemclt command   
+
+----------------------------------------------------
+no of words in the file
+commands
+>>wc k3.sh
+>>wc -w k3.sh
+>>wc -w <k3.sh
+
+Q.write down the program to check whether no of words in file
+  less than 200 otherwise print "greater than 200".
+ans. t7.sh
+
+>>ls *.txt : shows all the text files
+
+Q. shell program to print 1 to 3
+ans. 
+for i in 0 1 2 3
+do
+        echo $i
+done
+
+Q. shell script to print all the files present in the folder.
+ans.
+for i in *.sh
+do
+        echo $i
+done
+Q. write shell command to print files of folder with .doc extension
+ans. 
+/mnt/f/learning git/project
+Q. write shell program to take backup of files.
+
+Q. write a shell program to print those content of a file which are not
+common in file 1 and file2.
+
+
+----------------------------------------------------------------------
+bitwise operator, file test operators
+-----------
+File test Operators
+	- to test a particular property
+	- -b, -c, -d, -e, -r, -w, -x, -s
+
+
+read -p 'enter file name : ' FileName
+if [ -e $FileName ]
+then
+        echo File Exist
+else
+        echo File doesnot exist
+fi
+
+if [ -s $FileName ]
+then
+        echo the given file is not empty
+else
+        echo the given file is empty
+fi
+
+Q. write a shell program to read the value from users until
+   user writes "no"
+ans.
+
+Q. write a shell program to print host name, current user
+   current date, ip address of your system.
+ans. 
+echo "Host Name : $(hostname)"
+echo "Current User: $(whoami)"
+echo "Current date: $(date)"
+echo "Ip Address: $(hostname -I | cut -d ' ' -f1)"
+
+Q. print bash id 
+ans. echo $$
+
+Q. write a shell program to remove a file if pattern matches with
+   yes and if no then print no deletion otherwise print default 
+   condition. read file as command line argument. 
+ans. 
+
+--------------------------------------------------------
+String Manipulation
+--------------------------------------------------------
+$# - number of arguments
+
+Q. write a program to read a string as a command line argument
+   find the length of the that and extract 2nd word from the strong.
+ans.
+echo ${#string}
+sub=${str:6:2}
+str
+
+Q. write a program to create a function function1 and print your name and
+   call that function.
+ans.
+Fun1(){
+echo "Saurabh"
+}
+Fun1i
+ 
+OR
+Fun1(){
+echo $1
+}
+Fun1 saurabh
+
+--another program
+fun () {
+return 10
+}
+#invoke your function
+fun
+#capture value returned by last command
+ret=$7
+echo "Return value is #$ret"
+
+Q. write a program which performs summation of random arguments.
+ans.
+
+find_avg(){
+n_arg=$#
+echo #n_arg
+sum=0
+for x in "$@"
+do
+sum=$((sum + x))
+done
+echo "sum is " $sum
+avg=$((sum/n_arg))
+return $avg
+}
+echo "last returned value:" "$?"
+
+OR
+sum=0
+for i in "$@";
+do
+        sum=$(($sum + $i))
+done
+echo "summation of the given input is $sum"
+
+
+Q. write a function to find whether a number is
+   odd number or not
+ans. 
+odd() {
+x=$1
+if [ $((x%2)) ==0]; 
+then
+echo "INvalid input"
+else
+echo "number is Odd"
+fi
+}
+read a 
+odd $a
+
+Q. calling one function from another.
+one () {
+echo "first function"
+two
+}
+two () {
+echo "second function"
+}
+#calling function one
+one
+
+Q. write a program to declare function1 which
+   returns sum of two function arguments. Declare
+   another function function2 which fetches sum of  
+   first function and calculate average of that 
+ans. 
+
+Q. write a program to access variable which are defined
+   in another file.
+ans.
+in n1.sh
+a=10
+b=20
+
+in n2.sh
+source n1.sh
+echo $a
+echo $b
+Q. write a program to give the file contents m2.sh into a
+   variable and print those contents using another file.
+ans.
+in n3.sh
+file="n2.sh"
+name=$(cat "$file")
+
+in n4.sh
+source=n3.sh
+echo $name
+
+awk options `selection _criterai {action }` input-file > output-file
+awk '{print }' e1.txt	         : prints all the text
+awk '{print $1 }' e1.txt         : prints the first column
+awk '{print $2 }' e1.txt         : prints 2nd column
+awk '{print NR, $0 }' e1.txt     : print all the lines with line number
+awk  '/line/ {print $2 }' e1.txt : prints all the lines withe 'line'
+awk '{print $NF}' e1.txt         : shows last column
+
+Q. write a command to print 2nd to 4th line with the line number.
+ans. 
+awk 'NR==2, NR==4 {print NR, $0}' e1.txt
+
+Q. find the length of a line
+ans. awk '{ print length($0) }' filename
+
+awk 'END {print NR}' e1.txt
+
+Q. write a command to print a line where length is greater than 
+   22.
+ans.
+awk 'length($0) > 22' file.txt
+
+----------------------------------------------------------
+IFS
+-----------------------
+
+systemctl : to start services
+crontab
+at now +1min < ./bash.sh
+cat current_time.txt
+#apt at
+atq
+#at 3:30PM + 3days < ./bash.sh
+delete a pending job: atrm 26
+
+systemctl status crond.status
+Q. write a shell to setup a crontab send an automatic mail when free memory is less.
+ans. 
+------------------------------------------------------------
+SED Command
+----------------
+Sed command
+	- a stream editor
+	- can do insertion, deletion, search and replace
+	- supports regular expression
+	>> sed OPtions... [script] [inputfile..]
+
+>> sed 's/AP/AOC/' e1.txt
+>> sed 's/AP/AOC/2' e1.txt
+>> sed 's/AP/AOC/3' e1.txt
+>> sed 's/ap/aoc/g' e1.txt
+>> sed '/aoc/d' e1.txt
+>> sed 's/aoc/linux/p ' e1.txt
+>> sed -n '/reader/p' e1.txt
+>> sed '3 s/linux/aoc/g ' e1.txt
+>> sed '3, $ s/linux/assistant/' e1.txt
+>> sed '3, $ s/aoc/assitant/' e1.txt
+>> sed '2d' e1.txt
+>> sed '2,3d' e1.txt > e2.txt
+>> sed '/aoc/d' e1.txt
+>> sed -n '/a*c/p' e1.txt
+>> sed -n '/^z/p' e1.txt
+>> sed -n '/^t/p' e1.txt
+>> sed -n '/p$/p e1.txt
+>> sed -n '/a*c/p' e1.txt
+Q. write a command to show the content which ends with p.
+ans. 
+
+2*8 + 3*6 + 3*6 / 8
+16 + 18 + 18 
+36 + 16 
+  52/8   20
+43.99
+9
+
+Q. write a command for text "Welcome k19cc" put w and k in brackets.
+
+Q. write a shell program to read command line argument a number and print
+   your name that number of times.
+ans.
+a=0
+read name
+while [ $a -lt $1 ]
+do
+echo $name
+a=`expr $a + 1`
+done
+
+Q. write a program to define function with arguments if argument value are odd
+   perform sum for it.
+ans. 
+
+Q. write a command on your system to start a web server.
+
+Apache server
+hostname -I
+
+
+
+--------------------------------------
+--------------------------------------
+docker --version
+sudo apt-get install docker.io
+
+sudo service docker start
+systemctl start docker
+
+
